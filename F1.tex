@@ -8,13 +8,7 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Cdot}{\boldsymbol{\cdot}}
-\newcommand{\I}{\mathbb{I}}
-\newcommand{\HR}{\mathbb{HR}}
-\newcommand{\HRI}{\mathbb{HRI}}
-\newcommand{\sinp}{\mathrm{sinp}}
-\newcommand{\cosp}{\mathrm{cosp}}
-\newcommand{\cosi}{\mathrm{cosi}}
-\newcommand{\sini}{\mathrm{sini}}
+
 \newtheorem{thm}{Theorem}
 \newtheorem{defn}{Definition}
 \newtheorem{conv}{Convention}
@@ -33,8 +27,27 @@
 \begin{abstract}
     We take the perpendicular unit and use it to define a field with one unit. 
 \end{abstract}
-\section{Algebra of F1}
-    
+\section{Basic Properties of the F1}
+    When we think about the field with one unit we can imagine several properties we would like that element to have. 
+    Under the operation of addition we would like this unit to be its own inverse and as a group we would like it to be its own identity with that set.
+    We write:
+    \begin{align}
+        \perp = -\perp \label{add:inv}
+    \end{align}
+    And we also would like if that following equation holds:
+    \begin{align}
+        \perp + \perp = \perp \label{add:id}
+    \end{align}
+    Now for multiplication. We would like it if in the field with one element the following equation holds:
+    \begin{align}
+        \perp * \perp^{-1} = \perp \label{mult:id}
+    \end{align}
+    We often fantasize that in a field with one unit this last equation holds:
+    \begin{align}
+        \perp * \perp = \perp \label{mult:inv}
+    \end{align}
+    Carlstrom introduced an element of a larger set which matches this description \cite{Carlstrom2001Wheels} and they called it the perpendicular unit or bottom unit which we shall adopt here.
+    The properties of wheels with their unary operation / is not quite a multiplicative inverse. We extend it here in this single case. 
 \bibliographystyle{plain}  % or another style like alpha, unsrt, etc.
 \bibliography{references.bib}  % the name of the .bib file
 \end{document}
