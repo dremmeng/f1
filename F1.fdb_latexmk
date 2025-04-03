@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex F1"] 1743388668.33814 "F1.aux" "F1.bbl" "F1" 1743388668.96795 0
-  "./references.bib" 1743388531.71568 561 7712e48cb4618676ead50e686cd1ebe5 ""
+["bibtex F1"] 1743691172.3075 "F1.aux" "F1.bbl" "F1" 1743691172.9769 0
+  "./references.bib" 1743691108.80397 877 91331f9f769b6901ada984c25ac70705 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "F1.aux" 1743388668.73339 424 cf4892d1d7ab62a53b7a9361db0a851e "pdflatex"
+  "F1.aux" 1743691172.7152 572 506250beb77b9b769b68eafee2b5375a "pdflatex"
   (generated)
   "F1.bbl"
   "F1.blg"
   (rewritten before read)
-["pdflatex"] 1743388668.45761 "/home/drew/Documents/f1/F1.tex" "F1.pdf" "F1" 1743388668.96809 0
-  "/home/drew/Documents/f1/F1.tex" 1743388666.87842 2221 9e9cc1bb38b5b834ab5a54d02213e22b ""
+["pdflatex"] 1743691172.42682 "/home/drew/Documents/f1/F1.tex" "F1.pdf" "F1" 1743691172.97703 0
+  "/home/drew/Documents/f1/F1.tex" 1743691170.84725 2399 4f4b13062f6cbf536432ceff3e162b8f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -89,9 +89,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1743017093 5496777 dfac5a65ccd1b178961f799dec0d389d ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1743017200 3345754 aaf435fcdfc94e675b7472152a660ba2 ""
   "/usr/local/texlive/2025/texmf.cnf" 1743017089.25792 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "F1.aux" 1743388668.73339 424 cf4892d1d7ab62a53b7a9361db0a851e "pdflatex"
-  "F1.bbl" 1743388668.45339 211 737fadc8849fb781ee50dff3c9d9f485 "bibtex F1"
-  "F1.tex" 1743388666.87842 2221 9e9cc1bb38b5b834ab5a54d02213e22b ""
+  "F1.aux" 1743691172.7152 572 506250beb77b9b769b68eafee2b5375a "pdflatex"
+  "F1.bbl" 1743691172.42221 471 17e215fbb8453e9da20ab0f2f8399011 "bibtex F1"
+  "F1.tex" 1743691170.84725 2399 4f4b13062f6cbf536432ceff3e162b8f ""
   (generated)
   "F1.aux"
   "F1.log"
