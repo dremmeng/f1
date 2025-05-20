@@ -1,0 +1,161 @@
+\documentclass[10pt, oneside]{article}
+\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry, cite}
+\geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin = .75in}
+
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Cdot}{\boldsymbol{\cdot}}
+
+
+
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{conv}{Convention}
+\newtheorem{rem}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{example}{Example}
+\newtheorem{exe}{Exercise}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{remark}{Remark}
+\title{Solutions to the Schrodinger Equation As a Ring}
+\author{[Drew Remmenga]}
+
+
+
+
+\begin{document}
+
+
+
+
+\maketitle
+\begin{abstract}
+  Hilbert dreamed of a theory of Quantum gravity with eigenvalues given by the Riemann Zeta Function. We derive a quantum theory of spin and connect it to eigenvalues of L-Functions.
+\end{abstract}
+\section{Solving the Schrodinger Equation}
+  Schroginger introduced his wave equation \cite{Islam1994} which in a field with zero potential we write:
+  \begin{align}
+      i \frac{\partial \psi (x,t)}{\partial t} = \frac{\partial^2 \psi (x,t)}{\partial x^2} \label{schrodinger}
+  \end{align}
+  This is idealized and set in natural units and in one dimension but works for our purposes.
+  We begin with the separation of variables.
+  \begin{align*}
+      \psi (x,t) &= T(t)X(x) \\
+      i T'(t) X(x) &= X''(x)T(t) \\
+      i \frac{T'(t)}{T(t)} &= \frac{X''(x)}{X(x)} = \lambda
+  \end{align*}
+  Where $\lambda$ is some constant.
+  Furthermore we write:
+  \begin{align*}
+      i T'(t) &= \lambda T(t) \\
+      T(t) &= Ae^{i \lambda t}
+  \end{align*}
+  And:
+  \begin{align*}
+      X''(x) &= \lambda X(x) \\
+      X(x) &= c_1 e^{\sqrt{\lambda} x} + c_2 e^{-\sqrt{\lambda} x}
+  \end{align*}
+  In idealized cases of the wave equation we fix the origin to be zero and a distance $L$ to be zero. For our purposes we shall set $L=\pi$.
+  If we take $\lambda > 0$ we get the trivial solution. If we set $\lambda = 0$ we once again arrive at the trivial solution.
+  We take $\lambda < 0$ and write:
+  \begin{align*}
+      0 = c_2 \sin (\mu_n x)
+  \end{align*}
+  Without loss of generality in the constant $c_2$. The constant $\mu_n = n \frac{\pi}{L}$.
+  In the time dependent Schrodinger equation linear combinations of solutions are solutions so we need $n \in \N$ and $\lambda_n = -\mu_n^2$.
+  We arrive at:
+  \begin{align*}
+      \psi (x,t) = \sum_{n=0}^{\infty} A_n e^{i t n^2} \sin(n x)
+  \end{align*}
+  Traditionally in quantum mechanics we renormalize the equation to find the missing constant $A_n$.
+  Here we take the notion of fractional integrals. The fraction is given by the variable $\alpha$.
+  \begin{align}
+       _a D_t^{-\alpha} f(t) = \frac{1}{\Gamma (\alpha)} \int_{t}^{b} (\tau-t)^{\alpha-1} f(\tau) d\tau \label{Riemann-Liouville}
+  \end{align}
+   This \ref{Riemann-Liouville} is the Riemann-Liouville fractional integral \cite{Hermann2014}. Here we take $\alpha=s$ to be any complex number.
+  \begin{align*}
+      _a D_x^{-s} |\psi(x,t) |^2  &= 1 \\
+      \frac{1}{\Gamma (s)} \int_{0}^{\pi} | (\pi - x)^{s-1} \psi(x,t) |^2 dx &= 1 \\
+      \frac{1}{\Gamma (s)} \int_{0}^{\pi} | (\pi - x)^{s-1} \sum_{n=1}^{\infty} A_n \sin(nx) e^{i t n^2} |^2 dx &= 1 \\
+      \frac{1}{\Gamma (s)} |\sum_{n=1}^{\infty} \frac{A_n}{2(-n)^{s}(-1)^{\frac{3s}{2}}} [-i (-1)^{n} (\Gamma(s, -i n(x-\pi))-(-1)^{s} \Gamma(s, i n (x-\pi)))]_{x=0}^{x=\pi} \psi(t)|^2 &= 1 \\
+      \frac{1}{\Gamma (s)} |\sum_{n=1}^{\infty} \frac{A_n}{2(-n)^{s}(-1)^{\frac{3s}{2}}} [i (-1)^{n} (\Gamma(s, 0)) - (-1)^{s} \Gamma(s,0) - (-1) \Gamma(s,0) + i (-1)^{n} \Gamma (s,-i n \pi) + (-1)^{s} \Gamma(s, i n \pi) \psi(t)] |^{2} &= 1 \\   
+   \end{align*}
+   This is cool but we just want the Zeta function. We can absorb the constants in $\Gamma$ into $A_n$ without losing generality. As well as constants in $s$.
+   \begin{align*}
+       \sum_{n=1}^{\infty} \frac{A_n}{n^s} \frac{\bar{A_n}}{\bar{n^s}} e^{i n^2 t} \bar{e^{i n^2 t}} &= 1
+   \end{align*}
+   Now we take the natural log of both sides.
+   \begin{align}
+      \sum_{n=1}^{\infty} \frac{A_n \bar{A_n}}{n^{s}\bar{n^s}} e^{i t n^2} \bar{e^{i t n^2}} &=  1 \label{eq:1} \\
+      ln[\sum_{n=1}^{\infty} \frac{A_n}{n^s} \frac{\bar{A_n}}{\bar{n^{s}}} e^{i t n^2} \bar{e^{i t n^2}}] &= 2 m \pi \label{eq:2}
+  \end{align}
+  \section{Proof Solutions form a Field}
+  We shall take $m=0$ for our purposes.
+  \begin{remark}
+      This forms a ring.
+  \end{remark}
+  \begin{proof}
+      Let $a$, $b$, and $c$ be solutions to \ref{eq:2}.
+      Additions of these equations are associative.
+      \begin{align*}
+          (a+b)+c=a+(b+c)
+      \end{align*}
+      Multiplication is associative.
+      \begin{align*}
+          (a b) c = a (b c)
+      \end{align*}
+      Addition is commutative.
+      \begin{align*}
+          a + b = b + a
+      \end{align*}
+      Multiplication is commutative.
+      \begin{align*}
+          (a b) = (b a)
+      \end{align*}
+      Addition is distributive:
+      \begin{align*}
+          a (b + c) = ab + ac
+      \end{align*}
+      There exists a zero identity for addition. The trivial solution.
+      There exists an identity for multiplication the $A_n$ which sets the wave equal to 1.
+      There exists additive inverse elements. If $a$ is a solution to \ref{eq:1} then $-a$ is also a solution.
+  \end{proof}
+  \begin{remark}
+      This forms a group isomorphic to $\mathbb{S^{\aleph_0}}$. This is the circle in countably infinite dimensions. Take an element of \ref{eq:2}. There exists a map from the $A_n$ terms to each dimension of the circle by renormalizing. This map is clearly bijective.
+  \end{remark}
+  \section{The Field of L-Functions}
+  We know the Riemann Hypothesis over finite fields is true. \cite{milne2015riemannhypothesisfinitefields} \cite{youtube:f1} But more work must be done to prove it over the field of complex numbers.
+  There exists a map between solutions of \ref{eq:1} to the set of L-Functions by setting $A_n$ appropriately and multiplying by a constant.
+  Products of solutions to \ref{eq:1} are also solutions. We perform a product integral over the domain.
+  This is reminiscent of what is described in the field with one unit here \cite{youtube:f1}. All solutions across time are solutions. We write:
+  \begin{align*}
+    \int_{-\infty}^{\infty}\sum_{n=1}^{\infty} \frac{A_n \bar{A_n}}{n^{s}\bar{n^s}} |e^{i t n^2} |^{2dt} &=  1
+  \end{align*}
+  $\psi(t)$ cycles through complex numbers in the circle. We can absorb without loss of generality into $A_n$ and $\bar{A_n}$ since we're finding the magnitude so this result about the Riemann Zeta function is stronger than the generalized Riemann Hypothesis.
+  We can rewrite this as a contour integral through the entire complex plane.
+  We can absorb $A_n$ and $\bar{A_n}$ into a new real number which we can call $\chi (n)$. We can also rewrite $s$ to $\frac{s}{2}$ without loss of generality since we are integrating over the entire complex plane. The general Riemann Hypothesis reads: \cite{Davenport2000}
+  \begin{align}
+      L(\chi,s) = \sum_{n=1}^{\infty} \frac{\chi(n)}{n^s} \label{general}
+  \end{align}
+  In our formulation we can once again integrate over the entire complex plane. In fact we can do this infinitely many times.
+  \begin{align}
+      \sum_{n=1}^{\infty} \frac{\chi(n)}{n^s} \frac{\bar{\chi(n)}}{\bar{n^s}} & = 1 \\
+  \end{align}
+  We obtain the Grand Riemann Zeta hypothesis as described here \cite{youtube:f1} and here \cite{Davenport2000}. This function clearly has eigenvalues at the negative even integers, the so called 'trivial solutions'. And assuming the variable $s$ isn't equal to one of those values it can be an eigenvalue if the real part of $s$ is equal to $\frac{1}{2}$.
+  Suppose there exists a solution not on the real line or not on the critical line. This would fundamentally break the symmetry between subtraction and division demonstrated between the trivial and non-trivial zeros.
+\bibliographystyle{plain}  % or another style like alpha, unsrt, etc.
+\bibliography{references.bib}  % the name of the .bib file
+\end{document}
+
+
+
+
+
